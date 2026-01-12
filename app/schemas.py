@@ -1,0 +1,57 @@
+from pydantic import BaseModel , EmailStr
+from datetime import datetime
+
+#Response model for user.
+class UserResponse(BaseModel):
+    email: EmailStr
+    created_at: datetime
+    id: int
+
+    class Config:
+        from_attributes=True
+
+class PostBase(BaseModel):
+    title: str
+    content: str
+    published: bool = True
+
+class PostCreate(PostBase):
+    pass
+
+
+class UserRelationship(BaseModel):
+    email: EmailStr
+
+#Model for reponse structure
+
+class Post(PostBase):  #inheriting the base class , that will give title,content,published
+    id: int
+    created_at: datetime  
+    owner_id: int
+    owner: UserRelationship 
+
+    class Config:
+        orm_mode = True
+
+
+#Model to create a user
+
+class UserCreate(BaseModel):
+    email:EmailStr
+    password: str
+
+
+
+
+#Login credentials schema
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+#schema for token
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id: int
