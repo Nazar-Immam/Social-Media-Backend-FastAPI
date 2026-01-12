@@ -1,5 +1,6 @@
-from pydantic import BaseModel , EmailStr
+from pydantic import BaseModel , EmailStr, conint ,Field
 from datetime import datetime
+from typing import Annotated
 
 #Response model for user.
 class UserResponse(BaseModel):
@@ -10,10 +11,12 @@ class UserResponse(BaseModel):
     class Config:
         from_attributes=True
 
+
 class PostBase(BaseModel):
     title: str
     content: str
     published: bool = True
+
 
 class PostCreate(PostBase):
     pass
@@ -23,7 +26,6 @@ class UserRelationship(BaseModel):
     email: EmailStr
 
 #Model for reponse structure
-
 class Post(PostBase):  #inheriting the base class , that will give title,content,published
     id: int
     created_at: datetime  
@@ -55,3 +57,9 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: int
+
+
+#model for vote table
+class Vote(BaseModel):
+    post_id: int
+    dir:Annotated[int, Field(strict=True, le=1)]
