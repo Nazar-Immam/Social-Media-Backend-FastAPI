@@ -33,11 +33,18 @@ class Post(PostBase):  #inheriting the base class , that will give title,content
     owner: UserRelationship 
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+#Response for post with votes (joins)
+class PostOut(BaseModel):
+    Post: Post
+    votes: int
+
+    class Config:
+        from_attributes=True
 
 
 #Model to create a user
-
 class UserCreate(BaseModel):
     email:EmailStr
     password: str
