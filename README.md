@@ -15,8 +15,25 @@ A **production-style social media backend** built using **FastAPI**, designed wi
 - Strong request & response validation using **Pydantic Schemas**
 - Data Migrations through **Alembic**
 - CORS support using fastapi **CORSMiddleware**
+- Password Hashing
+- Query Parameters
 
 ---
+
+## 📘 API Documentation (Swagger UI)
+
+Below are screenshots from FastAPI’s Swagger UI showing secured and functional endpoints.
+
+### 🔹 API Endpoints Overview
+![Endpoints](./screenshots/swagger-endpoints.png)
+
+### 🔹 JWT Authentication (Authorized)
+![Auth](./screenshots/swagger-authorized.png)
+
+### 🔹 Request & Response Example
+![Example](./screenshots/swagger-request-response.png)
+
+
 
 ## API Endpoints Overview
 - POST /users – Register user
