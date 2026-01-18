@@ -1,13 +1,6 @@
 # Social Media Backend API (FastAPI)
 
 A **production-style social media backend** built using **FastAPI**, designed with clean architecture, real-world authentication, and scalable database modeling.
-
-> **Work in Progress** — Actively improving features, performance, and security.
----
-## Why This Project Stands Out
-
-This project is not just a CRUD app. It demonstrates how modern backend systems are **designed, structured, and secured** in real startups.
-
 ---
 
 ## 🧠 Core Features
@@ -20,8 +13,20 @@ This project is not just a CRUD app. It demonstrates how modern backend systems 
 - Prevent Duplicate Votes (User ↔ Post constraint)
 - Modular API structure using **APIRouters**
 - Strong request & response validation using **Pydantic Schemas**
+- Data Migrations through **Alembic**
+- CORS support using fastapi **CORSMiddleware**
 
 ---
+
+## API Endpoints Overview
+- POST /users – Register user
+- POST /login – User authentication
+- POST /posts – Create post
+- GET /posts – Fetch all posts
+- GET /posts/{id} – Fetch single post
+- PUT /posts/{id} – Update post
+- DELETE /posts/{id} – Delete post
+- POST /vote – Vote/Unvote post
 
 ## 🛠️ Tech Stack
 
@@ -64,8 +69,7 @@ Designed with proper **foreign keys, constraints, and relationships** to ensure 
 
 ## Ongoing Improvements
 
-- Pagination & advanced filtering  
-- Role-based access control  
+- Pagination & advanced filtering   
 - API performance optimization  
 - Deployment (Docker + Cloud)  
 - Rate limiting & security hardening  
@@ -73,7 +77,7 @@ Designed with proper **foreign keys, constraints, and relationships** to ensure 
 ---
 
 
-Open to **backend roles, internships, and startup opportunities**.
+
 
 
 
