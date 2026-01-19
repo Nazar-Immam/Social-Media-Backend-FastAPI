@@ -22,6 +22,8 @@ A **production-style social media backend** built using **FastAPI**, designed wi
 
 ## 📘 API Documentation (Swagger UI)
 
+Video Link of apis running via Postman: https://drive.google.com/file/d/1hH-YuGNDH1zQ4nn0B6r3b6BXWpMeNw91/view?usp=drivesdk
+
 Below are screenshots from FastAPI’s Swagger UI showing secured and functional endpoints.
 
 ### 🔹 API Endpoints Overview
